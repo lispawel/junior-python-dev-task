@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Data</title>
+</head>
+<body>
+<h1>Currency Data</h1>
+<div>
+    {{ table | safe }}
+</div>
+<form method="POST" action="/save_data">
+    <input type="text" name="currency_input" style="width: 300px;"
+           placeholder="Enter currency pairs separated by space"/>
+    <button type="submit">Save</button>
+</form>
+{% if error_message %}
+<p style="color: red;">{{ message }}</p>
+{% endif %}
+</body>
+</html>
